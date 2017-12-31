@@ -8,8 +8,20 @@ var orm = {
             if (err) {
                 return result.status(500).end();
             }
-    
-            res.render("index", { burgers: result });
+
+            var burgerDevoured = [];
+            var burgerNotDevoured = [];
+
+            console.log(result);
+
+            for (i = 0; i < result.length; i ++){
+                if (result[i].devoured){
+                    burgerDevoured.push(result[i]);
+                } else {
+                    burgerNotDevoured.push(result[i]);
+                }
+            }
+            res.render("index", { burgers: burgerNotDevoured, devouredBurgers: burgerDevoured});
         })
     },
     insertOne: function(newBurger, res){
@@ -21,8 +33,8 @@ var orm = {
             if (err) {
                 return result.status(500).end();
             }
-
-            res.render("index", { burgers: result });
+            
+            res.redirect("/");
         })
     },
     updateOne: function (burger_id, res){
@@ -41,8 +53,7 @@ var orm = {
             if (err) {
                 return result.status(500).end();
             }
-
-            res.render("index", { burgers: result});
+            res.redirect("/");
         })
     }
 }

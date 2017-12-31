@@ -27,7 +27,7 @@ app.post("/newBurger", function(req, res){
 })
 
 app.post("/devoured", function(req, res){
-    console.log(req.body.id);
+    // console.log(req.body.id);
     orm.updateOne(req.body.id, res);
 })
 
