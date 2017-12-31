@@ -36,4 +36,16 @@
       })
   })
 
+  $(".devBurger").on("click", function(event){
+    event.preventDefault();
+
+    var burgerID = {
+      id: $(this).attr("data-burgerid"),
+    }
+    
+    $.post("/devoured", burgerID, function(data){
+
+    })
+  })
+
 </script>

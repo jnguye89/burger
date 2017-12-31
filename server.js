@@ -26,6 +26,11 @@ app.post("/newBurger", function(req, res){
     orm.insertOne(req.body.burger, res);
 })
 
+app.post("/devoured", function(req, res){
+    console.log(req.body.id);
+    orm.updateOne(req.body.id, res);
+})
+
 
 app.listen(port, function() {
     console.log("listening on port", port);
