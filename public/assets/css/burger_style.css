@@ -1,4 +1,10 @@
 body {
     width: 80%;
     margin: auto;
+    background-color: #ebd29c;
+}
+
+
+.form {
+    margin: auto;
 }

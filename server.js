@@ -34,6 +34,11 @@ app.post("/devoured", function(req, res){
     // res.redirect("/");
 })
 
+app.post("/devoureAgain", function(req, res){
+    // console.log(req.body.id);
+    orm.updateOneAgain(req.body.id, res);
+    // res.redirect("/");
+})
 
 app.listen(port, function() {
     console.log("listening on port", port);

@@ -58,6 +58,28 @@ var orm = {
 
             res.redirect("/");
         })
+    },
+    updateOneAgain: function (burger_id, res){
+        var queryString = "UPDATE burgers SET ? WHERE ?";
+
+        connection.query(queryString, 
+            [  
+                {
+                    devoured: "0",
+                },
+                {
+                    id: burger_id,
+                }
+            ], 
+            function(err, result){
+            if (err) {
+                return result.status(500).end();
+            }
+            var burgerDevoured = [];
+            var burgerNotDevoured = [];
+
+            res.redirect("/");
+        })
     }
 }
 
