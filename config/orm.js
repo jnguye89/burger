@@ -53,6 +53,9 @@ var orm = {
             if (err) {
                 return result.status(500).end();
             }
+            var burgerDevoured = [];
+            var burgerNotDevoured = [];
+
             res.redirect("/");
         })
     }

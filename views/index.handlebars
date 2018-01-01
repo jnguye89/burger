@@ -45,32 +45,5 @@
 
 </div>
 
-<script type="text/javascript">
-  $("#submit").on("click", function(event){
-      event.preventDefault();
-
-      var burger = {
-        burger: $("#newBurger").val().trim(),
-      }
-
-      $.post("/newBurger", burger, function(data){
-
-
-      })
-  })
-
-  $(".devBurger").on("click", function(event){
-    event.preventDefault();
-
-    var burgerID = {
-      id: $(this).attr("data-burgerid"),
-    }
-    
-    $.post("/devoured", burgerID, function(data){
-
-    })
-  })
-
-</script>
 
 
