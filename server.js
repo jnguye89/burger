@@ -5,7 +5,7 @@ var exphbs = require("express-handlebars");
 var path = require("path");
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
 
 // Sets up the Express app to handle data parsing
